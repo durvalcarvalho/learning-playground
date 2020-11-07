@@ -1,0 +1,50 @@
+<div class="jumbotron">
+
+	{{ app | upper }}
+	
+	<input 
+		class="form-control" 
+		ng-model="criterioDeBusca" 
+		placeholder="O que você está buscando?"
+		ng-model-options="{updateOn: 'default blur', debounce: {default: 500, blur: 0} }"
+	/>
+
+	<table ng-show="contatos.length > 0" class="table">
+		<tr>
+			<th></th>
+			<th>Serial</th>
+			<th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+			<th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
+			<th>Operadora</th>
+			<th>Data</th>
+			<th>Preço</th>
+		</tr>
+		<tr 
+			ng-class="{'selecionado negrito': contato.selecionado}" 
+			ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao track by $index"
+			ng-click="verificarContatoSelecionado(contatos)"
+		>
+			<td><input type="checkbox" ng-model="contato.selecionado"/></td>
+			<td>{{::contato.serial}}</td>
+			<td><a href="#/detalhesContato/{{contato.id + 1}}">{{contato.nome | name}}</a></td>
+			<td>{{::contato.telefone}}</td>
+			<td>{{::contato.operadora.nome}}</td>
+			<td>{{::contato.data | date:'dd/MM/yyyy'}}</td>
+			<td>{{::contato.operadora.precoComImposto | currency }}</td>
+		</tr>
+	</table>
+	<hr/>
+	<a class="btn btn-primary btn-block" href="#/novoContato">Novo Contato</a>
+
+	<button class="btn btn-primary btn-block" ng-click="resetContatos()">
+		Reset
+	</button>
+
+	<button 
+		class="btn btn-danger btn-block" 
+		ng-click="apagarContatos(contatos)" 
+		ng-if="hasContatoSelecionado"
+	>
+		Apagar Contatos
+	</button>
+</div>

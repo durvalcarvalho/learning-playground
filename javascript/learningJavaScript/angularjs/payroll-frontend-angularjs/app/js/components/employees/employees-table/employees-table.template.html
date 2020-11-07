@@ -1,0 +1,28 @@
+<div class="table-employee">
+  <table class="table" id="employeeTable">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col"> First Name </th>
+        <th scope="col"> Last Name </th>
+        <th scope="col"> Role </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in $ctrl.employees" ng-class="{selected: employee.selected}">
+        <td><input type="checkbox" ng-model="employee.selected"></td>
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.role }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <a href="http://localhost:8000/#!/EmployeeForm" class="btn btn-primary btn-block">
+    Add new Employee
+  </a>  
+  
+  <button ng-click="$ctrl.deleteEmployees($ctrl.employees)" class="btn btn-danger btn-block">
+    Delete
+  </button>
+</div>

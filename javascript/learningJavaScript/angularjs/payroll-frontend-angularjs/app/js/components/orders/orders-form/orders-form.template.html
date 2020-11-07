@@ -1,0 +1,13 @@
+<div class="container">
+  <form name="orderForm">
+    <input 
+      ng-model="$ctrl.order.description" 
+      name="description" 
+      placeholder="Description" 
+      ng-required="true" 
+      class="form-control"
+    >
+
+  <button ng-click="$ctrl.addOrder($ctrl.order)" class="btn btn-primary btn-block"> Save </button>
+
+</div>

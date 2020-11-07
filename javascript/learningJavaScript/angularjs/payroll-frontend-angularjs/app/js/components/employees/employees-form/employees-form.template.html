@@ -1,0 +1,31 @@
+<div class="container">
+  <form name="employeeForm">
+    <input 
+      ng-model="$ctrl.employee.firstName" 
+      name="firstName" 
+      placeholder="First Name" 
+      ng-required="true" 
+      class="form-control"
+    >
+
+    <input 
+      ng-model="$ctrl.employee.lastName" 
+      name="lastName" 
+      placeholder="Last Name" 
+      ng-required="true"
+      class="form-control"
+    >
+
+    <input 
+      ng-model="$ctrl.employee.role" 
+      name="role" 
+      placeholder="Role" 
+      ng-required="true"
+      class="form-control"
+    >
+  </form>
+
+  <button ng-click="$ctrl.addEmployee($ctrl.employee)" class="btn btn-primary btn-block"> Save </button>
+  <button ng-click="$ctrl.employee=undefined" class="btn btn-warning btn-block"> Reset </button>
+
+</div>

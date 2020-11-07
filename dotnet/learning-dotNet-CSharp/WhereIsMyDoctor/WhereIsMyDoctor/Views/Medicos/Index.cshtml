@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WhereIsMyDoctor.Models.Medico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Adicionar")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Nome
+        </th>
+        <th>
+            Cidade
+        </th>
+        <th>
+            Especialidade
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDMedico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Especialidade.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id = item.IDMedico }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.IDMedico }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.IDMedico }, new { @class = "excluir" })
+        </td>
+    </tr>
+}
+
+</table>

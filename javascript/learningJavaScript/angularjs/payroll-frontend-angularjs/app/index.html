@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="payroll">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PayRoll Frontend</title>
+  
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="static/app.css">
+  
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-route.min.js"></script>
+
+  <script src="js/app.module.js"></script>
+  <script src="js/app.config.js"></script>
+  
+  <script src="js/components/employees/employees-table/employees-table.controller.js"></script>
+  <script src="js/components/employees/employees-table/employees-table.component.js"></script>
+  
+  <script src="js/components/employees/employees-form/employees-form.component.js"></script>
+  <script src="js/components/employees/employees-form/employees-form.controller.js"></script>
+  
+  <script src="js/components/orders/orders-form/orders-form.component.js"></script>
+  <script src="js/components/orders/orders-form/orders-form.controller.js"></script>
+  
+  <script src="js/components/orders/orders-table/orders-table.component.js"></script>
+  <script src="js/components/orders/orders-table/orders-table.controller.js"></script>
+  
+  <script src="js/values/configValues.js"></script>
+  
+  <script src="js/services/employeesAPIServices.js"></script>
+  <script src="js/services/ordersAPIServices.js"></script>
+  
+  <script src="js/interceptors/timestampInterceptor.js"></script>
+  
+  <script src="js/config/interceptorsConfig.js"></script>
+  
+</head>
+<body ng-view>
+</body>
+</html>

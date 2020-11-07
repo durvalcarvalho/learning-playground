@@ -1,0 +1,27 @@
+h1 {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.selected {
+  background-color: rgba(105, 105, 105, 0.445);
+}
+
+.form-control {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.table-employee {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  text-align: center;
+}
+
+#employeeTable {
+  margin-top: 5%;
+}
